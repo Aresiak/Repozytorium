@@ -1,0 +1,83 @@
+body{
+    margin:0 auto;
+    padding:0;
+}
+
+.container{
+  background-color: #8BB381;
+  border:10px solid #8BB381;
+  overflow:hidden;
+}
+
+.banner {
+  background-color: #336600;
+  color: white;
+  font-size: 120%;
+  text-align: center;
+  height: 10vh;
+}
+.banner h1 {
+margin: 0;
+padding: 0;
+
+}
+
+.left-panel {
+  background-color: #AFC7C7;
+  width: 40%;
+  min-height: 70vh;
+  text-align: center;
+  float: left;
+}
+.right-panel {
+  background-color: #CFECEC;
+  width: 60%;
+  min-height: 70vh;
+  
+  font-size: 15px;
+  float: left;
+  text-align: center;
+}
+.right-panel hr {
+  background-color: black;
+}
+.dane_sekretarek_container {
+text-align: left;
+
+}
+
+.footer {
+  background-color: #669966;
+  color: white;
+  text-align: center;
+  font-size: 120%;
+  font-family: Tahoma;
+ min-height: 10vh;
+  padding: 10px;
+  width:100%;
+  clear:both; 
+}
+table {height: 100%;
+  width:100%;
+  text-align: center;
+  margin: auto;
+
+}
+p {
+  text-align: center;
+  font-family: Tahoma;
+  color: #003300;
+  font-size: 20px;
+  font-weight: bold;
+}
+th {height: 100%;
+  background-color: #006633;
+  color: white;
+  text-align: center;
+}
+th, td {
+  height: 100%;
+  border-bottom: 1px solid #026216;
+  padding: 8px;
+  border: 2px solid green;
+}
