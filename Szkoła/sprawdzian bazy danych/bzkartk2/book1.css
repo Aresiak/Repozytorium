@@ -1,0 +1,32 @@
+
+.article {
+     background-color: #CCFFFF;
+    height: 400px;
+    width: 600px;
+    margin: auto;
+    padding: auto;    
+}
+.header {
+    background-color: #000666;
+    height: 50px;
+    text-align: center;
+    color: white;
+}
+#gorna {
+    background-color: #CCFFFF;
+    height: 50px;
+    text-align: center;
+    padding-top: 20px;
+    border: 2px dotted #000066;
+}
+#dolna {
+    background-color: #33CCFF;
+    text-align: center;
+    height: 170px;
+    padding-top: 5px;
+}
+h1,h2,h3{
+    display:inline;
+    
+}
+  
