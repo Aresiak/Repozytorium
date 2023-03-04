@@ -1,0 +1,64 @@
+body {
+	margin: 0;
+	padding: 0;
+	font-family: Arial, sans-serif;
+}
+
+header {
+	background-color: rgb(166, 162, 162);
+	padding: 10px;
+}
+
+nav ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+nav li {
+	display: inline-block;
+	margin-right: 20px;
+}
+
+nav a {
+	color: white;
+	text-decoration: none;
+	font-size: 18px;
+}
+
+.contact-container {
+	display: flex;
+	flex-wrap: wrap;
+	margin: 50px;
+}
+
+.contact-info {
+	flex: 1 1 300px;
+	margin-right: 20px;
+	margin-bottom: 20px;
+	background-color: rgb(166, 162, 162);
+	padding: 20px;
+	box-shadow: 0 0 10px #4a4242;
+}
+
+.contact-icon {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-bottom: 10px;
+}
+
+.contact-icon img {
+	width: 50px;
+	height: 50px;
+}
+
+.contact-details h3 {
+	font-size: 18px;
+	margin: 0 0 10px 0;
+}
+
+.contact-details p {
+	font-size: 16px;
+	margin: 0;
+}
