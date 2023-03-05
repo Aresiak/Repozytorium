@@ -10,8 +10,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="fontawesome-free-5.15.3-web/css/all.min.css">
     
-</head>
+    </head>
 <body>
+  
     <header>
     <nav class="navbar">
   <div class="logo">
@@ -36,9 +37,7 @@
 </nav>
   </div>
 </header>
-</head>
-<body>
-<div class="contact-container">
+<section><div class="contact-container">
 		<div class="contact-info">
 			<div class="contact-icon">
             <div class="icon"><i class="fa fa-phone"></i></div>
@@ -68,8 +67,16 @@
 				<h3>Adres email</h3>
                 <a href="mailto:biblioteka@example.com">
 				<p>kontakt@biblioteka.pl</p>
+        
+        
 			</div>
 		</div>
 	</div>
+</section>
+  <div class="avatar-icon">
+  <a href="loginpanel.php">
+    <img src="https://www.salvet.pl/wp-content/uploads/2022/06/Dummy-Person-182x182-1.png" alt="Bogna" class="avatar"width="0" height="0">
+  </a>
+</div>
 </body>
 </html>

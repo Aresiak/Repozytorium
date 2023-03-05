@@ -10,6 +10,7 @@
     
 </head>
 <body>
+  
     <header>
     <nav class="navbar">
   <div class="logo">
@@ -26,14 +27,11 @@
     <li><a href="#">O nas</a></li>
     <li><a href="kontakt.php">Kontakt</a></li>
   </ul>
-  <div class="burger">
-    <span>bogna</span>
-    <span></span>
-    <span></span>
-  </div>
+  
 </nav>
   </div>
 </header>
+
 <section><div class="left-panel">
 <?php
 $servername = "localhost";
@@ -67,9 +65,14 @@ if ($result->num_rows > 0) {
 
 
     ?>
-    </div>
+    
 </section>
 
+<div class="avatar-icon">
+  <a href="loginpanel.php">
+    <img src="https://www.salvet.pl/wp-content/uploads/2022/06/Dummy-Person-182x182-1.png" alt="Bogna" class="avatar"width="0" height="0">
+  </a>
+</div>
 
 </body>
 </html>
