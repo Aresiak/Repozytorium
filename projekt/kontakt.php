@@ -13,31 +13,9 @@
     </head>
 <body>
   
-    <header>
-    <nav class="navbar">
-  <div class="logo">
-    <a href="#">Książki u Boguśki</a>
-  </div>
-  <div class="search-box">
-  <form action="wyniki_wyszukiwania.php" method="post">
-  <input type="search" name="search" placeholder="Wpisz autora...">
-  <button type="submit"><i class="fa fa-search"></i></button>
-</form>
-  </div>
-  <ul class="nav-links">
-  <li><a href="projekt.php">Strona Główna</a></li>
-    <li><a href="#">O nas</a></li>
-    <li><a href="kontakt.php">Kontakt</a></li>
-  </ul>
-  <div class="burger">
-    <span>bogna</span>
-    <span></span>
-    <span></span>
-  </div>
-</nav>
-  </div>
-</header>
-<section><div class="contact-container">
+<?php include_once './component/navbar.php' ?>
+<section>
+  <div class="contact-container">
 		<div class="contact-info">
 			<div class="contact-icon">
             <div class="icon"><i class="fa fa-phone"></i></div>
@@ -73,10 +51,6 @@
 		</div>
 	</div>
 </section>
-  <div class="avatar-icon">
-  <a href="loginpanel.php">
-    <img src="https://www.salvet.pl/wp-content/uploads/2022/06/Dummy-Person-182x182-1.png" alt="Bogna" class="avatar"width="0" height="0">
-  </a>
-</div>
+<?php include_once './component/ikonalogowanie.php' ?>
 </body>
 </html>

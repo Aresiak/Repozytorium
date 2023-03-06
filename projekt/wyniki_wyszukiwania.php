@@ -10,31 +10,7 @@
     
 </head>
 <body>
-    <header>
-    <nav class="navbar">
-  <div class="logo">
-    <a href="#">Książki u Boguśki</a>
-  </div>
-  <div class="search-box">
-
-  <form action="wyniki_wyszukiwania.php" method="get">
-  <input type="search" name="search" placeholder="Wpisz autora...">
-  <button type="submit"><i class="fa fa-search"></i></button>
-</form>
-  </div>
-  <ul class="nav-links">
-  <li><a href="projekt.php">Strona Główna</a></li>
-    <li><a href="#">O nas</a></li>
-    <li><a href="kontakt.php">Kontakt</a></li>
-  </ul>
-  <div class="burger">
-    <span>bogna</span>
-    <span></span>
-    <span></span>
-  </div>
-</nav>
-  </div>
-</header>
+<?php include_once './component/navbar.php' ?>
 
 <?php
 $servername = "localhost";
