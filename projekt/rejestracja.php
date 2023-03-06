@@ -14,7 +14,7 @@
   
 <?php include_once './component/navbar.php' ?>
 <div class="register-panel">
-<i class="material-icons">arrow_back</i>
+<a href="loginpanel.php"><i class="material-icons">arrow_back</i></a>
 		<form method="post">
 			<h2>Rejestracja</h2>
 			<label for="login">Login:</label>
@@ -29,16 +29,8 @@
 			<input type="submit" value="Zarejestruj" name="sumbit">
 		</form>
 	</div>
-<?php
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "projekt";
-$conn = new mysqli($servername, $username, $password, $dbname);
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-  }
-  
+	<?php include_once './component/sqlconnect.php'?>
+  <?php
 	
 
 	if(isset($_POST["login"])){ 
@@ -48,12 +40,6 @@ if ($conn->connect_error) {
 		$password = $_POST["password"];
 		$email = $_POST["email"];
 		$sql = "SELECT * FROM loginy WHERE login='$login' OR email='$email'";
-
-
-
-
-
-
 
 	$result = $conn->query($sql);
 
@@ -65,6 +51,7 @@ if ($conn->connect_error) {
 	 		if ($conn->query($sql) === TRUE) {
 				echo "Rejestracja przebiegła pomyślnie. Przekierowanie na stronę logowania...";
 				header("Location: loginpanel.php");
+				sleep(3);
                  exit();
 			} else {
 				echo "Error: " . $sql . "<br>" . $conn->error;

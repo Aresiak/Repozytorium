@@ -1,7 +1,7 @@
 <header>
     <nav class="navbar">
   <div class="logo">
-    <a href="#">Książki u Boguśki</a>
+    <a href="https://www.facebook.com/profile.php?id=100013417740006">Książki u Boguśki</a>
   </div>
   <div class="search-box">
   <form action="wyniki_wyszukiwania.php" method="post">

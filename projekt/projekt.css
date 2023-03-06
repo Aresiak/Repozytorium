@@ -133,13 +133,28 @@ html, body {
       }
       section{
         height:100vh; 
-        margin:0% 10% !important;
+        margin:0% 10%;
+       
+
+  
+
+  
+  
       }
       /*prawy panel z ilością dodanych książek*/
       .right-panel{
-        float:left;
-       
+        float:right;
+        width:30%;
+        margin-top:100px;
       }
+      .right-panel h2{
+        line-height: 0.2;
+        text-align:center;
+      }
+     .right-panel h1{
+      text-align:center;
+      line-height: 0.5;
+     }
 
 
 
@@ -155,8 +170,7 @@ html, body {
   height: 54px;
   position: fixed;
   border-radius: 50%;
-  border: 2px solid rgb(0, 0, 0);
-  box-shadow: 5px 5px 5px rgb(172, 167, 167);
+  
   bottom: 10px;
   left: 10px;
 

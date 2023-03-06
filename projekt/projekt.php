@@ -14,16 +14,9 @@
 <?php include_once './component/navbar.php' ?>
 
 <section><div class="left-panel">
-<?php
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "projekt";
-$conn = new mysqli($servername, $username, $password, $dbname);
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-  }
-  
+
+<?php include_once './component/sqlconnect.php'?>
+  <?php
   $sql = "SELECT imie, nazwisko, ksiazki, url_ksiazka FROM autorzy ORDER BY RAND() LIMIT 1";
 $result = $conn->query($sql);
 if ($result->num_rows > 0) {
@@ -53,22 +46,15 @@ if ($result->num_rows > 0) {
     <?php include_once './component/ikonalogowanie.php' ?>
 </div>
 <div class="right-panel"> 
-<?php
+<?php include_once './component/sqlconnect.php'?>
 
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "projekt";
-$conn = new mysqli($servername, $username, $password, $dbname);
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-  }
+<?php
   $ksiazki = 'ksiazki';
   $sql = "SELECT COUNT($ksiazki) as count from autorzy";
   
   $result = mysqli_query($conn, $sql);
   $count = mysqli_fetch_assoc($result);
-  echo $count['count'];
+  echo "<h2>Ilość dodanych książek:</h2><h1>{$count['count']}</h1>";
 ?>
     </div> 
     </section>

@@ -12,16 +12,6 @@
 <body>
 <?php include_once './component/navbar.php' ?>
 
-<?php
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "projekt";
-$conn = new mysqli($servername, $username, $password, $dbname);
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-  }
-  
-  ?>
+<?php include_once './component/sqlconnect.php' ?>
 </body>
 </html>

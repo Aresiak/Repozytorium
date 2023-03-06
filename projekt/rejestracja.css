@@ -4,13 +4,14 @@ body {
   
   .register-panel {
     margin: auto;
-    margin-top: 10%;
+    margin-top: 5%;
     width: 30%;
     background-color: rgb(206, 202, 202);
     padding: 20px;
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0,0,0,0.3);
     text-align: center;
+    
   }
   
   input[type="text"], input[type="password"], input[type="email"] {
@@ -20,6 +21,7 @@ body {
     border: 1px solid #ccc;
     border-radius: 5px;
     box-sizing: border-box;
+    
   }
   
   input[type="submit"] {
@@ -30,31 +32,33 @@ body {
     border-radius: 5px;
     cursor: pointer;
     font-size: 16px;
+    
   }
   
   a {
     text-decoration: none;
-    color: #4CAF50;
+    color: rgb(72, 71, 71);
+    
   }
   .material-icons {
+    margin-right:95%;
     font-family: 'Material Icons';
     font-weight: normal;
     font-style: normal;
     font-size: 24px;
     line-height: 1;
-    top: 10px;
-    position:relative;
-    transform: translateX(-50%);
-    left: 10px;
     letter-spacing: normal;
     text-transform: none;
-    display: block;
+    display: inline-block;
     white-space: nowrap;
     word-wrap: normal;
     direction: ltr;
-    -webkit-font-feature-settings: 'liga';
     -webkit-font-smoothing: antialiased;
     
+  }
+  .material-icons a{
+    text-decoration: none;
+    color: rgb(71, 68, 68);
   }
   
   .material-icons:hover {

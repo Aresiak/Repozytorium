@@ -14,7 +14,11 @@
   
 <?php include_once './component/navbar.php' ?>
 
-<section><div class="login-panel">
+<?php include_once './component/sqlconnect.php'
+
+
+?>
+<div class="login-panel">
 		<h2>Panel logowania</h2>
 		<form action="logowanie.php" method="post">
 			<label for="login">Login:</label><br>
@@ -25,6 +29,6 @@
 		</form>
 		<p>Nie masz konta? <a href="rejestracja.php">Zarejestruj się</a></p>
 	</div>
-</section>
+
 </body>
 </html>
