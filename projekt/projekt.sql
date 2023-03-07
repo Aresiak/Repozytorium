@@ -1,13 +1,14 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.0
+-- version 4.8.3
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Czas generowania: 05 Mar 2023, 16:52
--- Wersja serwera: 10.4.27-MariaDB
--- Wersja PHP: 8.2.0
+-- Czas generowania: 07 Mar 2023, 14:04
+-- Wersja serwera: 10.1.35-MariaDB
+-- Wersja PHP: 7.2.9
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -28,10 +29,10 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `autorzy` (
-  `Imie` text NOT NULL,
-  `Nazwisko` text NOT NULL,
-  `ksiazki` text NOT NULL,
-  `url_ksiazka` text NOT NULL
+  `Imie` text COLLATE utf8_bin NOT NULL,
+  `Nazwisko` text COLLATE utf8_bin NOT NULL,
+  `ksiazki` text COLLATE utf8_bin NOT NULL,
+  `url_ksiazka` text COLLATE utf8_bin NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 --
@@ -50,10 +51,23 @@ INSERT INTO `autorzy` (`Imie`, `Nazwisko`, `ksiazki`, `url_ksiazka`) VALUES
 --
 
 CREATE TABLE `loginy` (
-  `login` text NOT NULL,
-  `password` text NOT NULL,
-  `email` text NOT NULL
+  `login` text COLLATE utf8_bin NOT NULL,
+  `password` text COLLATE utf8_bin NOT NULL,
+  `email` text COLLATE utf8_bin NOT NULL,
+  `user_id` text COLLATE utf8_bin NOT NULL,
+  `role` text COLLATE utf8_bin NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+
+--
+-- Zrzut danych tabeli `loginy`
+--
+
+INSERT INTO `loginy` (`login`, `password`, `email`, `user_id`, `role`) VALUES
+('3', '3', '3@3', 'user6407279129849', ''),
+('4', '4', '4@4.com', 'user640727f50e1ca', 'user'),
+('Dagens', 'Dagens', 'Dagens@gmail.com', 'user64072a885cb00', 'user'),
+('Daga', 'Daga', 'Daga@Daga.com', 'user640730cae54c2', 'user'),
+('mechaty', 'mechaty', 'mechaty@mechaty.com', 'user6407356deffbe', 'user');
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

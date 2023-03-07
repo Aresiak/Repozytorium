@@ -13,6 +13,59 @@
 <body>
   
 <?php include_once './component/navbar.php' ?>
+
+	<?php include_once './component/sqlconnect.php'?>
+  
+	<div class="register-panel-tekst">
+
+<?php
+ if(isset($_COOKIE['user_id'])){
+	$loged_check = "SELECT `user_id` FROM `loginy` WHERE `user_id`= '".$_COOKIE['user_id']."';";
+	$query_loged = mysqli_query($server_con, $loged_check);
+	$acces_loged = mysqli_fetch_assoc($query_loged);
+	if($_COOKIE['user_id'] == $acces_loged['user_id']){
+		echo'
+			Jesteś już zalogowany
+		'; 
+	} 
+}
+elseif(!isset($_COOKIE['user_id'])){
+	
+	if (!empty($_POST["login"]) && !empty($_POST["password"]) && !empty($_POST["email"])) {
+		$login = $_POST["login"];
+		$password = $_POST["password"];
+		$email = $_POST["email"]; 
+		$role="user";
+		$sql = "SELECT * FROM loginy WHERE login='$login' OR email='$email'";
+
+	$result = $conn->query($sql);
+
+	if ($result->num_rows == 0) {
+		$user_id = uniqid('user'); 
+			$sql = "INSERT INTO loginy (login, password, email, user_id, role)
+	 		VALUES ('$login', '$password', '$email', '$user_id', '$role')";
+           
+	 		if ($conn->query($sql) === TRUE) {
+				echo "Rejestracja przebiegła pomyślnie. Przekierowanie na stronę logowania...";
+				header("Location: loginpanel.php");
+				sleep(3);
+                 exit();
+			} else {
+				echo "Error: " . $sql . "<br>" . $conn->error;
+	 		}
+	 	} else {
+	 		echo "<h2>Login lub email już istnieją w bazie.</h2>";
+	 	}
+	 } else {
+	 	echo "<h2>Wypełnij wszystkie pola.</h2>";
+}
+}
+
+
+
+
+?>
+</div>
 <div class="register-panel">
 <a href="loginpanel.php"><i class="material-icons">arrow_back</i></a>
 		<form method="post">
@@ -29,47 +82,6 @@
 			<input type="submit" value="Zarejestruj" name="sumbit">
 		</form>
 	</div>
-	<?php include_once './component/sqlconnect.php'?>
-  <?php
-	
-
-	if(isset($_POST["login"])){ 
-	
-	if (!empty($_POST["login"]) && !empty($_POST["password"]) && !empty($_POST["email"])) {
-		$login = $_POST["login"];
-		$password = $_POST["password"];
-		$email = $_POST["email"]; 
-		$sql = "SELECT * FROM loginy WHERE login='$login' OR email='$email'";
-
-	$result = $conn->query($sql);
-
-	if ($result->num_rows == 0) {
-		$user_id = uniqid('user'); 
-			$sql = "INSERT INTO loginy (login, password, email,role,user_id)
-	 		VALUES ('$login', '$password', '$email', '$user_id')";
-           
-	 		if ($conn->query($sql) === TRUE) {
-				echo "Rejestracja przebiegła pomyślnie. Przekierowanie na stronę logowania...";
-				header("Location: loginpanel.php");
-				sleep(3);
-                 exit();
-			} else {
-				echo "Error: " . $sql . "<br>" . $conn->error;
-	 		}
-	 	} else {
-	 		echo "Login lub email już istnieją w bazie.";
-	 	}
-	 } else {
-	 	echo "Wypełnij wszystkie pola.";
-}
-	}
-
-
-
-
-?>
-
-
         
 </body>
 </html>

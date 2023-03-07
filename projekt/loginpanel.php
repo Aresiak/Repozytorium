@@ -13,22 +13,26 @@
 <body>
   
 <?php include_once './component/navbar.php' ?>
-
-<?php include_once './component/sqlconnect.php'
-
-
-?>
 <div class="login-panel">
+        <form method="post">
 		<h2>Panel logowania</h2>
-		<form action="logowanie.php" method="post">
-			<label for="login">Login:</label><br>
-			<input type="text" id="login" name="login" required><br>
-			<label for="haslo">Hasło:</label><br>
-			<input type="password" id="haslo" name="haslo" required><br>
+		
+			<label for="email">Email:</label><br>
+			<input type="text" id="email" name="email"><br>
+			<label for="password">Hasło:</label><br>
+			<input type="password" id="password" name="passwod"><br>
 			<input type="submit" value="Zaloguj się">
+			<a href="loginpanel.php">
+</a>
 		</form>
 		<p>Nie masz konta? <a href="rejestracja.php">Zarejestruj się</a></p>
 	</div>
+	<?php include_once './component/sqlconnect.php' ?>
+<?php
+
+
+?>
+
 
 </body>
 </html>
