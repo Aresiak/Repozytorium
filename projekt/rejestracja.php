@@ -45,9 +45,9 @@
 
 	if ($result->num_rows == 0) {
 			
-			$sql = "INSERT INTO loginy (login, password, email)
-	 		VALUES ('$login', '$password', '$email')";
-
+			$sql = "INSERT INTO loginy (login, password, email,role)
+	 		VALUES ('$login', '$password', '$email', 'user')";
+           
 	 		if ($conn->query($sql) === TRUE) {
 				echo "Rejestracja przebiegła pomyślnie. Przekierowanie na stronę logowania...";
 				header("Location: loginpanel.php");

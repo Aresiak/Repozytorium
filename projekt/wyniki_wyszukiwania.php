@@ -13,5 +13,7 @@
 <?php include_once './component/navbar.php' ?>
 
 <?php include_once './component/sqlconnect.php' ?>
+
+<?php include_once './component/ikonalogowanie.php' ?>
 </body>
 </html>
