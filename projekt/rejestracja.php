@@ -38,15 +38,15 @@
 	if (!empty($_POST["login"]) && !empty($_POST["password"]) && !empty($_POST["email"])) {
 		$login = $_POST["login"];
 		$password = $_POST["password"];
-		$email = $_POST["email"];
+		$email = $_POST["email"]; 
 		$sql = "SELECT * FROM loginy WHERE login='$login' OR email='$email'";
 
 	$result = $conn->query($sql);
 
 	if ($result->num_rows == 0) {
-			
-			$sql = "INSERT INTO loginy (login, password, email,role)
-	 		VALUES ('$login', '$password', '$email', 'user')";
+		$user_id = uniqid('user'); 
+			$sql = "INSERT INTO loginy (login, password, email,role,user_id)
+	 		VALUES ('$login', '$password', '$email', '$user_id')";
            
 	 		if ($conn->query($sql) === TRUE) {
 				echo "Rejestracja przebiegła pomyślnie. Przekierowanie na stronę logowania...";

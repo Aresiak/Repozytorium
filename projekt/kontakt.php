@@ -13,7 +13,13 @@
     </head>
 <body>
   
-<?php include_once './component/navbar.php' ?>
+<?php include_once './component/navbar.php' 
+
+
+
+
+
+?>
 <section>
   <div class="contact-container">
 		<div class="contact-info">
