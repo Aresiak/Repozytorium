@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.3
+-- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Czas generowania: 07 Mar 2023, 14:04
--- Wersja serwera: 10.1.35-MariaDB
--- Wersja PHP: 7.2.9
+-- Czas generowania: 07 Mar 2023, 21:34
+-- Wersja serwera: 10.4.27-MariaDB
+-- Wersja PHP: 8.2.0
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -29,10 +28,10 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `autorzy` (
-  `Imie` text COLLATE utf8_bin NOT NULL,
-  `Nazwisko` text COLLATE utf8_bin NOT NULL,
-  `ksiazki` text COLLATE utf8_bin NOT NULL,
-  `url_ksiazka` text COLLATE utf8_bin NOT NULL
+  `Imie` text NOT NULL,
+  `Nazwisko` text NOT NULL,
+  `ksiazki` text NOT NULL,
+  `url_ksiazka` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 --
@@ -51,23 +50,43 @@ INSERT INTO `autorzy` (`Imie`, `Nazwisko`, `ksiazki`, `url_ksiazka`) VALUES
 --
 
 CREATE TABLE `loginy` (
-  `login` text COLLATE utf8_bin NOT NULL,
-  `password` text COLLATE utf8_bin NOT NULL,
-  `email` text COLLATE utf8_bin NOT NULL,
-  `user_id` text COLLATE utf8_bin NOT NULL,
-  `role` text COLLATE utf8_bin NOT NULL
+  `login` text NOT NULL,
+  `password` text NOT NULL,
+  `email` text NOT NULL,
+  `user_id` text NOT NULL,
+  `role` text NOT NULL,
+  `zalogowany` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 --
 -- Zrzut danych tabeli `loginy`
 --
 
-INSERT INTO `loginy` (`login`, `password`, `email`, `user_id`, `role`) VALUES
-('3', '3', '3@3', 'user6407279129849', ''),
-('4', '4', '4@4.com', 'user640727f50e1ca', 'user'),
-('Dagens', 'Dagens', 'Dagens@gmail.com', 'user64072a885cb00', 'user'),
-('Daga', 'Daga', 'Daga@Daga.com', 'user640730cae54c2', 'user'),
-('mechaty', 'mechaty', 'mechaty@mechaty.com', 'user6407356deffbe', 'user');
+INSERT INTO `loginy` (`login`, `password`, `email`, `user_id`, `role`, `zalogowany`) VALUES
+('1', '1', '1@1.com', 'user640797f39c526', 'user', 0),
+('2', '2', '2@2.com', 'user640798cc08a4e', 'user', 0),
+('5', '5', '5@1.com', 'user640799466665e', 'user', 0),
+('999', '999', '999@999.com', 'user6407996fbeaa1', 'user', 0),
+('bogna', 'bogna', 'bogna@bogna.com', 'user6407999c8aafd', 'user', 0);
+
+-- --------------------------------------------------------
+
+--
+-- Struktura tabeli dla tabeli `panelkontaktowy`
+--
+
+CREATE TABLE `panelkontaktowy` (
+  `name` text NOT NULL,
+  `message` text NOT NULL,
+  `date` date NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+
+--
+-- Zrzut danych tabeli `panelkontaktowy`
+--
+
+INSERT INTO `panelkontaktowy` (`name`, `message`, `date`) VALUES
+('Dagmarka', 'Pozdrawiam', '2023-03-07');
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

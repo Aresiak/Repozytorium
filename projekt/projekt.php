@@ -13,7 +13,8 @@
   
 <?php include_once './component/navbar.php' ?>
 
-<section><div class="left-panel">
+<section>
+  <div class="left-panel">
 
 <?php include_once './component/sqlconnect.php'?>
   <?php
@@ -39,24 +40,45 @@ if ($result->num_rows > 0) {
 
 
     ?>
-    
-      
+    </div>
+
 
 
     <?php include_once './component/ikonalogowanie.php' ?>
-</div>
-<div class="right-panel"> 
 <?php include_once './component/sqlconnect.php'?>
-
+<div class="right-panel">
 <?php
   $ksiazki = 'ksiazki';
   $sql = "SELECT COUNT($ksiazki) as count from autorzy";
   
   $result = mysqli_query($conn, $sql);
   $count = mysqli_fetch_assoc($result);
-  echo "<h2>Ilość dodanych książek:</h2><h1>{$count['count']}</h1>";
+  echo "<h2>Ilość dodanych książek:</h2><h2>{$count['count']}</h2>";
 ?>
-    </div> 
-    </section>
+    </div>
+  </section>
+  <?php include_once './component/sqlconnect.php' ?>
+  <?php
+// pobranie danych z bazy danych
+$sql = "SELECT * FROM loginy";
+$result = $conn->query($sql);
+
+if ($result->num_rows > 0) {
+    // wyświetlenie tabeli, jeśli istnieją rekordy w bazie danych
+    echo "<table><tr><th>login</th><th>email</th><th>role</th></tr>";
+    while($row = $result->fetch_assoc()) {
+        echo "<tr><td>".$row["login"]."</td><td>".$row["email"]."</td><td>";
+        if ($row["role"] === "user") {
+            echo "<div class='small-square'></div>";
+        }
+        echo "</td></tr>";
+    }
+    echo "</table>";
+} else {
+    echo "Brak rekordów w bazie danych.";
+}
+?>
+
+</div>
 </body>
 </html>

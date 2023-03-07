@@ -13,13 +13,8 @@
     </head>
 <body>
   
-<?php include_once './component/navbar.php' 
+<?php include_once './component/navbar.php' ?>
 
-
-
-
-
-?>
 <section>
   <div class="contact-container">
 		<div class="contact-info">
@@ -51,12 +46,72 @@
 				<h3>Adres email</h3>
                 <a href="mailto:biblioteka@example.com">
 				<p>kontakt@biblioteka.pl</p>
-        
+</a>
         
 			</div>
 		</div>
 	</div>
-</section>
+
+	<style>
+	
+	</style>
+	
+	<div class="formularz_tekst">
+	<?php 
+
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "projekt";
+$conn = new mysqli($servername, $username, $password, $dbname);
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $name = $_POST['name'] ?? '';
+    $message = $_POST['message'] ?? '';
+
+    if (!empty($name) && !empty($message)) {
+      $date = date('Y-m-d H:i:s');
+      $sql = "INSERT INTO panelkontaktowy (name, message, date) VALUES ('$name', '$message', '$date')";
+
+      if ($conn->query($sql) === TRUE) {
+        echo "<h1>Wiadomość została wysłana.</h1>";
+      } else {
+        echo "Error: " . $sql . "<br>" . $conn->error;
+      }
+    } else {
+      echo 'Proszę wypełnić wszystkie pola.';
+    }
+  }
+
+
+
+?>
+</div>
+<script>
+		
+		function countChars() {
+			var maxLength = 150;
+			var currentLength = document.getElementById("message").value.length;
+			var charsLeft = maxLength - currentLength;
+
+			document.getElementById("chars-left").innerHTML = charsLeft;
+		}
+	</script>
+
+</div>
+<div class="formularz">
+	<h1>Panel kontaktowy</h1>
+	<form method="POST">
+	<label for="name">Imię:</label>
+		<input type="text" id="name" name="name" required>
+
+		<label for="message">Wiadomość:</label>
+		<textarea id="message" name="message" maxlength="150" onkeyup="countChars()" required></textarea>
+		<div id="char-count">Pozostało <span id="chars-left">150</span> znaków</div>
+
+		<input type="submit" value="Wyślij">
+	</form>
+	</form>
+	</div>
 <?php include_once './component/ikonalogowanie.php' ?>
 </body>
 </html>
