@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Czas generowania: 07 Mar 2023, 21:34
+-- Czas generowania: 08 Mar 2023, 18:17
 -- Wersja serwera: 10.4.27-MariaDB
 -- Wersja PHP: 8.2.0
 
@@ -31,17 +31,18 @@ CREATE TABLE `autorzy` (
   `Imie` text NOT NULL,
   `Nazwisko` text NOT NULL,
   `ksiazki` text NOT NULL,
-  `url_ksiazka` text NOT NULL
+  `url_ksiazka` text NOT NULL,
+  `Przekierowanie` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 --
 -- Zrzut danych tabeli `autorzy`
 --
 
-INSERT INTO `autorzy` (`Imie`, `Nazwisko`, `ksiazki`, `url_ksiazka`) VALUES
-('Andrzej', 'Sapkowski', 'Krew Elfów', 'https://cyfroteka.pl/catalog/ebooki/0303355/030/cover/1/110244-wiedzmin-krew-elfow-andrzej-sapkowski-1.jpg'),
-('Andrzej ', 'Sapkowski', 'Ostatnie życzenie', 'https://cyfroteka.pl/catalog/ebooki/02033727/020/cover/1/220464.jpg'),
-('J.R.R.', 'Tolkien', 'Hobbit', 'https://cyfroteka.pl/catalog/ebooki/0203907/020/cover/1/148847.jpg');
+INSERT INTO `autorzy` (`Imie`, `Nazwisko`, `ksiazki`, `url_ksiazka`, `Przekierowanie`) VALUES
+('Andrzej ', 'Sapkowski', 'Krew Elfów', 'https://cyfroteka.pl/catalog/ebooki/0303355/030/cover/1/110244-wiedzmin-krew-elfow-andrzej-sapkowski-1.jpg', 'krewelfow.php'),
+('Andrzej', 'Sapkowski', 'Ostatnie Życzenie', 'https://cyfroteka.pl/catalog/ebooki/0303455/030/cover/1/110596-wiedzmin-ostatnie-zyczenie-andrzej-sapkowski-1.jpg', 'ostatniezyczenie.php'),
+('J.R.R.', 'Tolkien', 'Władca pierścieni ', 'https://cyfroteka.pl/catalog/ebooki/38130/94995/cover/1/wladca_pierscieni-muza-ebook-cov.jpg', 'wladcapierscieni.php');
 
 -- --------------------------------------------------------
 
