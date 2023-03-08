@@ -30,7 +30,7 @@ if (!empty($_POST["email"]) && !empty($_POST["password"])) {
 		$row = $result->fetch_assoc();
 		$_SESSION["user_id"] = $row['user_id'];
 		setcookie("user_id", $row['user_id'], time()+36000, "/");
-		header("Location: program.php"); 
+		header("Location: loginpanel.php"); 
 		exit();
 	} else {
 		echo "<h2>Nieprawidłowy login lub hasło.</h2>";
