@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Biblioteka</title>
+    <title>Rejestracja Biblioteka</title>
     <link rel="stylesheet" href="./rejestracja.css">
     <link rel="stylesheet" href="./projekt.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -23,7 +23,6 @@
 
 	
 <?php
-session_start();
 if(isset($_COOKIE["user_id"])) {
 }
 if (!empty($_POST["login"]) && !empty($_POST["password"]) && !empty($_POST["email"])) {

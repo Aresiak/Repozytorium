@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Biblioteka</title>
+    <title>Logowanie Biblioteka</title>
     <link rel="stylesheet" href="./projekt.css">
     <link rel="stylesheet" href="./loginpanel.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -15,7 +15,7 @@
 <?php include_once './component/navbar.php' ?>
 <?php include_once './component/sqlconnect.php' ?>
 <?php
-session_start();
+
 if(isset($_COOKIE["user_id"])) {
 	echo"<h2>Jesteś już zalogowany</h2>";
 }
@@ -28,9 +28,8 @@ if (!empty($_POST["email"]) && !empty($_POST["password"])) {
 
 	if ($result->num_rows == 1) {
 		$row = $result->fetch_assoc();
-		$_SESSION["user_id"] = $row['user_id'];
 		setcookie("user_id", $row['user_id'], time()+36000, "/");
-		header("Location: loginpanel.php"); 
+		header("Location: program.php"); 
 		exit();
 	} else {
 		echo "<h2>Nieprawidłowy login lub hasło.</h2>";
@@ -48,7 +47,8 @@ if (!empty($_POST["email"]) && !empty($_POST["password"])) {
 		<input type="password" name="password">
 		<input type="submit" value="Zaloguj" name="submit">
 	</form>
-	<a href="rejestracja.php">Nie masz konta? Zarejestruj się.</a>
+	Nie masz konta?
+	<a href="rejestracja.php"> Zarejestruj się.</a>
 </div>
 
 

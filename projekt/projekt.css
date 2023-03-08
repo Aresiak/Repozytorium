@@ -202,7 +202,7 @@ html {
 }
 
 .small-square {
-  display: inline-block;
+  display: flex;
   width: 10px;
   height: 10px;
   background-color: green;
