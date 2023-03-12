@@ -60,20 +60,22 @@ if ($result->num_rows > 0) {
  
   <?php
 
-$sql = "SELECT * FROM loginy";
-$result = $conn->query($sql);
+if (isset($_SESSION['logged_in']) && $_SESSION['role'] === 'user') {
+  $sql = "SELECT * FROM loginy";
+  $result = $conn->query($sql);
 
-if ($result->num_rows > 0) {
-    echo "<table><tr><th></th><th>tu sie pojawia  </th>";
-    while($row = $result->fetch_assoc()) {
-        if ($row["role"] === "user") {
-            echo "<div class='small-square'></div>";
-        }
-        echo "</td></tr>";
-    }
-    echo "</table>";
-} else {
-    echo "Brak rekordów w bazie danych.";
+  if ($result->num_rows > 0) {
+      echo "<table><tr><th></th><th>tu sie pojawia  </th>";
+      while($row = $result->fetch_assoc()) {
+          if ($row["role"] === "user") {
+              echo "<div class='small-square'></div>";
+          }
+          echo "</td></tr>";
+      }
+      echo "</table>";
+  } else {
+      echo "Brak rekordów w bazie danych.";
+  }
 }
 ?>
 

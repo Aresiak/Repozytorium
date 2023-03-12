@@ -10,8 +10,9 @@
 </form>
   </div>
   <ul class="nav-links">
+  <li><a href="adminpanel.php">Admin Panel</a></li>
   <li><a href="projekt.php">Strona Główna</a></li>
-    <li><a href="#">O nas</a></li>
+    <li><a href="onas.php">O nas</a></li>
     <li><a href="kontakt.php">Kontakt</a></li>
   </ul>
   

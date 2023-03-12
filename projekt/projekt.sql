@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Czas generowania: 08 Mar 2023, 18:17
+-- Czas generowania: 12 Mar 2023, 11:18
 -- Wersja serwera: 10.4.27-MariaDB
 -- Wersja PHP: 8.2.0
 
@@ -79,15 +79,36 @@ INSERT INTO `loginy` (`login`, `password`, `email`, `user_id`, `role`, `zalogowa
 CREATE TABLE `panelkontaktowy` (
   `name` text NOT NULL,
   `message` text NOT NULL,
-  `date` date NOT NULL
+  `date` date NOT NULL,
+  `id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 --
 -- Zrzut danych tabeli `panelkontaktowy`
 --
 
-INSERT INTO `panelkontaktowy` (`name`, `message`, `date`) VALUES
-('Dagmarka', 'Pozdrawiam', '2023-03-07');
+INSERT INTO `panelkontaktowy` (`name`, `message`, `date`, `id`) VALUES
+('Test12', 'Wiadomość testowa testowa testowaWiadomość testowa testowa testowaWiadomość testowa testowa testowaWiadomość testowa testowa testowa', '2023-03-12', 9);
+
+--
+-- Indeksy dla zrzutów tabel
+--
+
+--
+-- Indeksy dla tabeli `panelkontaktowy`
+--
+ALTER TABLE `panelkontaktowy`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- AUTO_INCREMENT dla zrzuconych tabel
+--
+
+--
+-- AUTO_INCREMENT dla tabeli `panelkontaktowy`
+--
+ALTER TABLE `panelkontaktowy`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
