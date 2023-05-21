@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Usługi Informatyczne</title>
+    <link rel="stylesheet" href="./styl.css">
+    <link rel="apple-touch-icon" sizes="76x76" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
+</head>
+<body>
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Usługi Informatyczne</title>
+        <link rel="stylesheet" href="./styl.css">
+     
+    </head>
+    <style>
+        .form-table {
+          margin: 0 auto;
+        }
+        </style>
+    <body>
+        <div id="container">
+            <div class="header">
+              <div class="logo">
+                
+                <img src="logos/logonormal.png" alt="Logo">
+              </div>
+              <div class="menu">
+            
+                <ul>
+                  <li><a href="./index.html">O Nas</a></li>
+                  <li><a href="./uslugi.html">Usługi</a></li>
+                  <li><a href="./kontakt.html">Kontakt</a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="banner">
+                
+                <img src="logos/animacja.gif" alt="baner">
+      
+                <div class="content">
+                    <hr>
+                    <h1>Firma IT - usługi informatyczne</h1>
+                    <form id="myForm">
+                      <table class="form-table">
+                        <tr>
+                          <td>Imię:</td>
+                          <td><input type="text" placeholder="Wprowadź imię" name="imie"></td>
+                        </tr>
+                        <tr>
+                          <td>Nazwisko:</td>
+                          <td><input type="text" placeholder="Wprowadź nazwisko" name="nazwisko"></td>
+                        </tr>
+                        <tr>
+                          <td>E-mail:</td>
+                          <td><input type="email" placeholder="Wprowadź e-mail" name="email"></td>
+                        </tr>
+                        <tr>
+                          <td>Usługa:</td>
+                          <td><textarea placeholder="Wprowadź opis usługi" rows="4" name="opis"></textarea></td>
+                        </tr>
+                        <tr>
+                          <td></td>
+                          <td>
+                            <label><input type="checkbox" name="regulamin"> Zapoznałem się z regulaminem</label>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td></td>
+                          <td>
+                            <button type="reset">Resetuj</button>
+                            <button type="submit">Prześlij</button>
+                          </td>
+                        </tr>
+                      </table>
+                    </form>
+                    <hr>
+                    <p id="resultParagraph" style="color: red;"></p>
+                  </div>
+                  
+                  <script>
+                    document.getElementById("myForm").addEventListener("submit", function(event) {
+    event.preventDefault(); // Zatrzymaj domyślne zachowanie formularza
+
+    var form = document.getElementById("myForm");
+    var imie = form.elements["imie"].value;
+    var nazwisko = form.elements["nazwisko"].value;
+    var email = form.elements["email"].value;
+    var opis = form.elements["opis"].value;
+    var regulamin = form.elements["regulamin"].checked;
+
+    if (!regulamin) {
+      var resultParagraph = document.getElementById("resultParagraph");
+      resultParagraph.textContent = "Musisz zapoznać się z regulaminem";
+      resultParagraph.style.color = "red";
+      return;
+    }
+
+    var resultParagraph = document.getElementById("resultParagraph");
+    resultParagraph.innerHTML = "<strong>" + imie.toUpperCase() + " " + nazwisko.toUpperCase() + "</strong><br>Treść twojej sprawy: " + opis + "<br>Na podany e-mail zostanie wysłana oferta.";
+    resultParagraph.style.color = "black";
+
+    // Możesz umieścić tutaj kod do wysłania oferty na podany e-mail
+
+    form.reset(); // Zresetuj formularz po wysłaniu
+
+  });
+                  </script>
